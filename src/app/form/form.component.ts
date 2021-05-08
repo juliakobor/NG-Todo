@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, AbstractControl, ValidationErrors} from '@angular/forms';
-import {getNgClassDecorators} from "@angular/core/schematics/migrations/undecorated-classes-with-di/ng_declaration_collector";
+
 
 function longerThan6(control: AbstractControl): ValidationErrors | null {
     if (control.value.length >= 6) {
@@ -37,18 +37,9 @@ export class FormComponent implements OnInit {
         console.log(this.myForm, this.myForm.value);
         const newTodo = new FormControl(this.myForm.value.todo, [longerThan6]);
         this.todos.push(newTodo);
-        if (this.myForm.status === 'INVALID') {
-            console.log("invalid");
-        }
     }
 
     removeTodo(index: number): void {
         this.todos.removeAt(index);
     };
-
-    validationCheck(): void {
-      if (this.myForm.status === 'INVALID') {
-        console.log("invalid");
-      }
-    }
 }
