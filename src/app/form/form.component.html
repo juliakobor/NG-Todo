@@ -5,16 +5,18 @@
                id="todo"
                formControlName="todo"
                placeholder="Add new line"
-               class="red">
+               [class]="this.myForm.status === 'VALID' ? 'green' : 'red'"
+               (keyup)="validationCheck()">
+
         <button (click)="onSubmit()">Add todo</button>
 
+        <div formArrayName="todos">
+            <div class="group" *ngFor="let control of todos.controls; let i = index">
+                <input type="text" [formControlName]="i"/>
+                <button (click)="removeTodo(i)">Delete todo</button>
+            </div>
 
-    <div formArrayName="todos">
-        <div class="group" *ngFor="let control of todos.controls; let i = index">
-            <input type="text" [formControlName]="i"/>
-            <button (click)="removeTodo(i)">Delete todo</button>
         </div>
+    </div>
 
-    </div>
-    </div>
 </form>
