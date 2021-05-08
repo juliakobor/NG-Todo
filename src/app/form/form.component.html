@@ -4,16 +4,17 @@
         <input type="text"
                id="todo"
                formControlName="todo"
-               placeholder="Add new line">
+               placeholder="Add new line"
+               class="red">
         <button (click)="onSubmit()">Add todo</button>
-    </div>
+
 
     <div formArrayName="todos">
-    <div class="group" *ngFor="let control of todos.controls; let i = index">
-    <input type="text" [formControlName]="i"/>
-    <button (click)="removeTodo(i)">Delete todo</button>
-        <!--<button (click)="editTodo(i)">Edit todo</button>-->
-</div>
+        <div class="group" *ngFor="let control of todos.controls; let i = index">
+            <input type="text" [formControlName]="i"/>
+            <button (click)="removeTodo(i)">Delete todo</button>
+        </div>
 
+    </div>
     </div>
 </form>
