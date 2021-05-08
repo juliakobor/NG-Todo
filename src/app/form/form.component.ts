@@ -20,8 +20,11 @@ export class FormComponent implements OnInit {
   }
   onSubmit(): void {
     console.log(this.myForm, this.myForm.value);
+    const newTodo = new FormControl();
+    this.todos.push(newTodo);
   }
   removeTodo(index: number): void {
     this.todos.removeAt(index);
   }
+
 }
