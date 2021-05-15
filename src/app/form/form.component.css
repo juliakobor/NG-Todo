@@ -5,3 +5,8 @@
 .red {
     background-color: pink;
 }
+
+.mat-flat-button {
+    background: #673AB7;
+    color: #FFD740;
+}

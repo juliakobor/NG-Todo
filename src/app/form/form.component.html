@@ -8,7 +8,7 @@
                placeholder="Add new line"
                [class]="this.myForm.status === 'VALID' ? 'green' : 'red'">
 
-        <button (click)="onSubmit()" [disabled]="this.myForm.value.todo.length<6">Add todo</button>
+        <button mat-flat-button (click)="onSubmit()" [disabled]="this.myForm.value.todo.length<6">Add todo</button>
         </mat-card>
         <div formArrayName="todos">
             <div class="group" *ngFor="let control of todos.controls; let i = index">
@@ -16,7 +16,7 @@
                     <mat-card-title>
                 <input type="text" [formControlName]="i"/>
                     </mat-card-title>
-                <button (click)="removeTodo(i)"><mat-icon>delete</mat-icon></button>
+                <button mat-flat-button (click)="removeTodo(i)"><mat-icon>delete</mat-icon></button>
                 </mat-card>
             </div>
 
