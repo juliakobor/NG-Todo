@@ -14,3 +14,17 @@
     background: #673AB7;
     color: #FFD740;
 }
+
+input {
+    border-color: #673AB7;
+    background-color: #FFD740;
+    color: #673AB7;
+}
+
+@media (width: 414px) {
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
