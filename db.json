@@ -1,0 +1,20 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "todo": "finish the essay"
+    },
+    {
+      "id": 2,
+      "todo": "buy milk"
+    },
+    {
+      "id": 3,
+      "todo": "clean bathroom"
+    },
+    {
+      "id": 4,
+      "todo": "water plants"
+    }
+  ]
+}

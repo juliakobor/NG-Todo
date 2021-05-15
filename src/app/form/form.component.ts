@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, AbstractControl, ValidationErrors} from '@angular/forms';
+import {DatabaseService} from "../database.service";
 
 
 function longerThan6(control: AbstractControl): ValidationErrors | null {
@@ -23,8 +24,14 @@ export class FormComponent implements OnInit {
         todos: this.fb.array(['Update the latest version', 'Practice', 'Workout']),
     });
 
-    constructor(private fb: FormBuilder) {
+    //this.databaseService.getTodos().subscribe(todos => console.log(todos));
+
+
+
+    constructor(private fb: FormBuilder, private databaseService: DatabaseService) {
     }
+
+
 
     get todos(): FormArray {
         return this.myForm.get('todos') as FormArray;
