@@ -6,6 +6,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {MatIconModule} from "@angular/material/icon";
       ReactiveFormsModule,
       BrowserAnimationsModule,
       MatCardModule,
-      MatIconModule
+      MatIconModule,
+      MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
