@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from "@angular/material/card";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -11,7 +14,10 @@ import {ReactiveFormsModule} from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      BrowserAnimationsModule,
+      MatCardModule,
+      MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

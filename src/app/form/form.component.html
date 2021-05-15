@@ -1,5 +1,6 @@
 <form [formGroup]="myForm">
     <div>
+        <mat-card>
         <label for="todo">Add new todo</label><br>
         <input type="text"
                id="todo"
@@ -8,11 +9,15 @@
                [class]="this.myForm.status === 'VALID' ? 'green' : 'red'">
 
         <button (click)="onSubmit()" [disabled]="this.myForm.value.todo.length<6">Add todo</button>
-
+        </mat-card>
         <div formArrayName="todos">
             <div class="group" *ngFor="let control of todos.controls; let i = index">
+                <mat-card>
+                    <mat-card-title>
                 <input type="text" [formControlName]="i"/>
-                <button (click)="removeTodo(i)">Delete todo</button>
+                    </mat-card-title>
+                <button (click)="removeTodo(i)"><mat-icon>delete</mat-icon></button>
+                </mat-card>
             </div>
 
         </div>
