@@ -17,4 +17,8 @@ export class DatabaseService {
     getTodos(): Observable<TodoItem[]> {
         return this.http.get<TodoItem[]>(this.apiURL);
     }
+
+    postTodo(todo: TodoItem): Observable<TodoItem[]> {
+        return this.http.post<TodoItem[]>(this.apiURL, todo);
+    }
 }

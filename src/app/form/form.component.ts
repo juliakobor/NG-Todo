@@ -24,26 +24,27 @@ export class FormComponent implements OnInit {
         todos: this.fb.array(['Update the latest version', 'Practice', 'Workout']),
     });
 
-    //this.databaseService.getTodos().subscribe(todos => console.log(todos));
-
-
-
     constructor(private fb: FormBuilder, private databaseService: DatabaseService) {
     }
 
+    //service metódusok
+    /*showTodos(): void {
+        this.databaseService.getTodos()
+            .subscribe(todos => console.log(todos));
+    }*/
 
+    onSubmit(): void {
+        this.databaseService.postTodo(this.myForm.value.todo)
+        this.databaseService.getTodos()
+            .subscribe(todos => console.log(todos));
+    }
 
+    //formarray metódusok
     get todos(): FormArray {
         return this.myForm.get('todos') as FormArray;
     }
 
     ngOnInit(): void {
-    }
-
-    onSubmit(): void {
-        console.log(this.myForm, this.myForm.value);
-        const newTodo = new FormControl(this.myForm.value.todo, [longerThan6]);
-        this.todos.push(newTodo);
     }
 
     removeTodo(index: number): void {
